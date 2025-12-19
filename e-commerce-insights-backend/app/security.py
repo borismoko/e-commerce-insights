@@ -1,12 +1,12 @@
-import os
 from datetime import datetime, timedelta, timezone
+from decouple import config
 from jose import jwt, JWTError
 from passlib.context import CryptContext
 
-# ↓ In production load from environment variables
-SECRET_KEY = os.getenv("SECRET_KEY", "change-me-in-prod")
+# Load from environment variables (from .env file)
+SECRET_KEY = config("SECRET_KEY", default="change-me-in-prod")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
+ACCESS_TOKEN_EXPIRE_MINUTES = config("ACCESS_TOKEN_EXPIRE_MINUTES", default=60, cast=int)
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
