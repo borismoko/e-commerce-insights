@@ -1,0 +1,76 @@
+{
+  "forecasts": [
+    {
+      "transaction_date": "2025-03-09",
+      "purchase_amount": 33716.859375
+    },
+    {
+      "transaction_date": "2025-03-10",
+      "purchase_amount": 33179.01953125
+    },
+    {
+      "transaction_date": "2025-03-11",
+      "purchase_amount": 29707.95703125
+    },
+    {
+      "transaction_date": "2025-03-12",
+      "purchase_amount": 31123.017578125
+    },
+    {
+      "transaction_date": "2025-03-13",
+      "purchase_amount": 33221.75390625
+    },
+    {
+      "transaction_date": "2025-03-14",
+      "purchase_amount": 30423.85546875
+    },
+    {
+      "transaction_date": "2025-03-15",
+      "purchase_amount": 33730.4140625
+    }
+  ],
+  "model_metrics": {
+    "ARIMA": {
+      "model_name": "ARIMA(1,1,1)x(1,1,1,7)",
+      "train_rmse": 5527.393593811594,
+      "train_mae": 4267.862352440077,
+      "aic": 14408.90043949912,
+      "bic": 14431.754854310819
+    },
+    "XGBoost": {
+      "model_name": "XGBoost",
+      "train_rmse": 1448.5056126499317,
+      "train_mae": 1114.9126935850572,
+      "feature_importance": {
+        "dayofweek": 0.03924879804253578,
+        "quarter": 0.01853177137672901,
+        "month": 0.030204372480511665,
+        "year": 0.0356878899037838,
+        "dayofyear": 0.0545559860765934,
+        "weekofyear": 0.07422778010368347,
+        "lag_1": 0.06592686474323273,
+        "lag_7": 0.05944892391562462,
+        "lag_14": 0.05909549072384834,
+        "lag_30": 0.05379058048129082,
+        "rolling_mean_7": 0.16779100894927979,
+        "rolling_std_7": 0.07884257286787033,
+        "rolling_mean_14": 0.07045700401067734,
+        "rolling_std_14": 0.06813529133796692,
+        "rolling_mean_30": 0.06750712543725967,
+        "rolling_std_30": 0.0565485842525959
+      }
+    }
+  },
+  "summary": {
+    "total_forecasted_sales": 225102.876953125,
+    "average_daily_sales": 32157.553850446428,
+    "forecast_period_start": "2025-03-09",
+    "forecast_period_end": "2025-03-15",
+    "forecast_days": 7,
+    "best_model": "XGBoost",
+    "models_evaluated": [
+      "ARIMA",
+      "XGBoost"
+    ]
+  }
+}
